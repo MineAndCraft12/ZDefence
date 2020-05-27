@@ -1,0 +1,118 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 0 !important;
+    height:100%;
+    overflow:hidden;
+}
+
+#gameBoard {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: sans-serif;
+}
+
+.menu {
+    width: 100%;
+    font-size: 2em;
+    text-align: center;
+}
+
+.menuTitle {
+    font-size: 1.5em;
+    cursor: default;
+}
+
+.menuButton {
+    padding: 8px;
+    margin: 4px;
+    cursor: pointer;
+    border-radius:8px;
+    transition: background-color 0.2s;
+}
+.menuButton:hover {
+    background-color: rgba(127, 127, 127, 0.25);
+}
+.menuButton:active {
+    background-color: rgba(127, 127, 127, 0.5);
+}
+
+/*
+    TILES ARE 90px TALL, 80px WIDE
+    SHOCK FENCE IS 40px WIDE
+
+    FRIENDLIES, ENEMIES, AND PROJECTILES ARE DRAWN BY CANVAS
+
+    CANVAS IS 760x540
+*/
+
+.effectsCanvas, .debrisCanvas {
+    pointer-events: none;
+    width: 760px;
+    height: 540px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    border: none;
+}
+
+.tileRow {
+    height: 90px;
+}
+
+.shockFence {
+    display: inline-block;
+    height: 90px;
+    width: 40px;
+}
+
+.tile {
+    display: inline-block;
+    transition: background-color 0.2s;
+    height: 90px;
+    width: 80px;
+}
+.tile:hover {
+    background-color:rgba(127, 127, 127, 0.5);
+}
+
+.highMenu, .lowMenu {
+    height: 70px;
+    border: 2px solid #7F7F7F;
+    padding: 2px;
+    background-color: #444;
+}
+
+.tool {
+    cursor: pointer;
+    background: #00840D;
+    text-align:center;
+    border-radius: 6px;
+    height: 66px;
+    border: 2px solid #7F7F7F;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-right: 4px;
+    width: 100px;
+}
+
+.toolName {
+    height: calc(1em + 2px);
+}
+
+.toolCost {
+    margin-top: calc(2em - 3px);
+    margin-bottom: calc(2em - 3px);
+    text-align:right;
+    padding:3px;
+}
